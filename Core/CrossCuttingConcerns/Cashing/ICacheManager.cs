@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Core.CrossCuttingConcerns.Cashing
+{
+    public interface ICacheManager  // kullandığım tüm cache teknolojileri için tek bir interface kullanacağım
+    {
+        T Get<T>(string key);
+        object Get(string key);
+        void Add(string key, object value, int duration);
+        bool IsAdd(string key);
+        void Remove(string key);
+        void RemoveByPattern(string pattern);
+    }
+}
